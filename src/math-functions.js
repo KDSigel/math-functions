@@ -12,9 +12,9 @@ example and uses the values that were input into the function:
 */
 
 export function sum(a, b) {
-    let first = (a + b);
-    let second = `The sum of ${a} and ${b} is ${a + b}.`;
-    return [first, second];
+    let firstSum = (a + b);
+    let firstStatement = `The sum of ${a} and ${b} is ${a + b}.`;
+    return [firstSum, firstStatement];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -28,9 +28,9 @@ Write a function called multiply() that takes in two numbers as arguments and re
 */
 
 export function multiply(a, b) {
-    let first = (a * b);
-    let second = `The product of ${a} and ${b} is ${a * b}.`;
-    return [first, second];
+    let firstProduct = (a * b);
+    let secondStatement = `The product of ${a} and ${b} is ${a * b}.`;
+    return [firstProduct, secondStatement];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -55,11 +55,12 @@ how to do this. However, you may continue to use the + operator for string conca
 */
 
 export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
-    let firstEl = a + b + c;
-    let secondEl = a * b * c;
-    let thirdEl = `${a} and ${b} and ${c} sum to ${firstEl}.`;
-    let fourthEl = `The product of ${a} and ${b} and ${c} is ${secondEl}.`;
-    return [firstEl, secondEl, thirdEl, fourthEl];
+    let firstEl = sum((sum(a, b)[0]), c)[0];
+    let secondEl = multiply((multiply(a, b)[0]), c)[0];
+    let thirdStatement = `${a} and ${b} and ${c} sum to ${firstEl}.`;
+    let fourthStatement = `The product of ${a} and ${b} and ${c} is ${secondEl}.`;
+
+    return [firstEl, secondEl, thirdStatement, fourthStatement];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
